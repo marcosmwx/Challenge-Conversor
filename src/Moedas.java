@@ -30,7 +30,7 @@ public class Moedas {
         if (continuar == 0) {
             converterValor(valor);
         } else if (continuar == 2) {
-
+            Inicioo.inicio();
         }
     }
 

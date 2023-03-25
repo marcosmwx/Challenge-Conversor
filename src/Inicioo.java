@@ -1,7 +1,8 @@
 import javax.swing.JOptionPane;
 
 public class Inicioo {
-    public static void main(String[] args) {
+
+    public static void inicio() {
         String[] opcoes = { "Conversor de Moedas", "Conversor de Temperatura" };
         String opcao = (String) JOptionPane.showInputDialog(null,
                 "Escolha uma opção:",
@@ -13,36 +14,33 @@ public class Inicioo {
         if (opcao != null) {
             switch (opcao) {
                 case "Conversor de Moedas":
-                    double valor = Double.parseDouble(JOptionPane.showInputDialog(null,
-                            "Digite o Valor", "Valor", 1));
-                    Moedas.converterValor(valor);
+                    String input = JOptionPane.showInputDialog(null, "Digite o Valor", "Valor", 1);
+                    if (input.matches("\\d+")) {
+                        double valor = Double.parseDouble(input);
+                        Moedas.converterValor(valor);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Entrada inválida. Digite apenas números.", "Erro",
+                                JOptionPane.ERROR_MESSAGE);
+                        Inicioo.inicio();
+                    }
                     break;
+                case "Conversor de Temperatura":
+                    String inputTemp = JOptionPane.showInputDialog(null, "Digite a Temperatura", "Temperatura", 1);
+                    if (inputTemp.matches("\\d+")) {
+                        double valorTemp = Double.parseDouble(inputTemp);
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Entrada inválida. Digite apenas números.", "Erro",
+                                JOptionPane.ERROR_MESSAGE);
+
+                    }
+                    break;
+
                 default:
                     break;
             }
         }
 
     }
+
 }
-
-/*
- * double n1 = Double.parseDouble(JOptionPane.showInputDialog(null,
- * "Digite um numero"));
- * double n2 = Double.parseDouble(JOptionPane.showInputDialog(null,
- * "Digite outro numero"));
- * 
- * JOptionPane.showMessageDialog(null, "A soma entre " + n1 + " e " + n2 +
- * " é igual a: " + (n1 + n2), "Resultado", 2);
- */
-// JOptionPane.showOptionDialog(null, "Escolha uma opcao", "Menu de Opcoes", 1,
-// 0, null, args, args);
-
-/*
- * int sair = JOptionPane.showConfirmDialog(null, "Voce deseja sair?",
- * "Atencao", 0);
- * if(sair == 0){
- * JOptionPane.showMessageDialog(null, "Usuario permanece!");
- * }else {
- * JOptionPane.showMessageDialog(null, "Usuario Saiu");
- * }
- */
