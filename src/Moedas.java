@@ -128,7 +128,8 @@ public class Moedas {
                     continuar();
                     break;
                 default:
-                    break;
+                    throw new IllegalArgumentException("Opção inválida: " + opcaoEscolhida);
+
             }
         }
 

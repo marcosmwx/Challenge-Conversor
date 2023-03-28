@@ -28,6 +28,7 @@ public class Inicioo {
                     String inputTemp = JOptionPane.showInputDialog(null, "Digite a Temperatura", "Temperatura", 1);
                     if (inputTemp.matches("\\d+")) {
                         double valorTemp = Double.parseDouble(inputTemp);
+                        Temperatura.converterTemperatura(valorTemp);
 
                     } else {
                         JOptionPane.showMessageDialog(null, "Entrada inválida. Digite apenas números.", "Erro",
